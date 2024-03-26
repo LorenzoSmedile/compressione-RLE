@@ -46,23 +46,22 @@ public class RLE extends Application {
 
 		int riga=3;
 		int colonna=3;
+		int conta=0;
 		matrice=new String [riga][colonna];
 		
 		for (int i=0;i<riga;i++) {
 			Hashtable<String, Integer> my_dict= new Hashtable<String,Integer>();
 			for (int i2=0;i2<colonna;i2++) {
 				if (my_dict.containsKey(matrice[i][i2])) {
-					
 					int val = my_dict.get(matrice[i][i2]);
-					my_dict.get(val+1);
+					conta++;
 				} else {
-					my_dict.put(matrice[i][i2],1);
-
-					
+					my_dict.put(matrice[i][i2],1);					
 				}
 			}
 		}
-
+		lPesoImmagineCompresso.setText(conta+"");
+		
 	}
 
 	public static void main(String[] args) {
